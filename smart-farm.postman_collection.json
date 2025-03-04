@@ -1,0 +1,314 @@
+{
+	"info": {
+		"name": "WAS-E3-smart-farm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2431802"
+	},
+	"item": [
+		{
+			"name": "Read moisture land section 1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "image_url",
+						"value": "https%3A%2F%2Fi.imgur.com%2FHBrB8p0.png",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[0,0,1,1]"
+				},
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/1/moisture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"1",
+						"moisture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read moisture land section 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "imageUrl",
+						"value": "http://example.org",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[1,0,2,1]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/1/moisture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"1",
+						"moisture"
+					],
+					"query": [
+						{
+							"key": "imageUrl",
+							"value": "https://i.imgur.com/5bGzZi7.jpg",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read moisture land section 3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "imageUrl",
+						"value": "http://example.org",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[0,1,1,2]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/1/moisture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"1",
+						"moisture"
+					],
+					"query": [
+						{
+							"key": "imageUrl",
+							"value": "https://i.imgur.com/5bGzZi7.jpg",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read moisture land section 4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "imageUrl",
+						"value": "http://example.org",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[1,1,2,2]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/1/moisture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"1",
+						"moisture"
+					],
+					"query": [
+						{
+							"key": "imageUrl",
+							"value": "https://i.imgur.com/5bGzZi7.jpg",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Irrigate land section 1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/2/sprayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"2",
+						"sprayer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Irrigate land section 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[1,0,2,1]"
+				},
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/2/sprayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"2",
+						"sprayer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Irrigate land section 3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[0,1,1,2]"
+				},
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/2/sprayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"2",
+						"sprayer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Irrigate land section 4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[1,1,2,2]"
+				},
+				"url": {
+					"raw": "http://localhost:1080/api/tractors/2/sprayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1080",
+					"path": [
+						"api",
+						"tractors",
+						"2",
+						"sprayer"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

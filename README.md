@@ -5,14 +5,16 @@ This repository contains:
 to retrieve knowledge about the world — and to use that knowledge to manage a farm.
 
 ## Table of Contents
-- [Project structure](#project-structure)
-- [Task 2](#task-2)
-  - [Task 2.1](#task-21)
-  - [Task 2.2](#task-22)
-  - [Task 2.3](#task-23)
-- [How to run the project](#how-to-run-the-project)
-  1. [Run the mockserver that mocks the tractors' HTTP APIs](#1-run-the-mockserver-that-mocks-the-tractors-http-apis)
-  2. [Run the JaCaMo application](#2-run-the-jacamo-application)
+- [Exercise 3: Web Ontologies and Knowledge Graphs](#exercise-3-web-ontologies-and-knowledge-graphs)
+  - [Table of Contents](#table-of-contents)
+  - [Project structure](#project-structure)
+  - [Task 2](#task-2)
+    - [Task 2.1](#task-21)
+    - [Task 2.2](#task-22)
+    - [Task 2.3](#task-23)
+  - [How to run the project](#how-to-run-the-project)
+    - [1. Run the mockserver that mocks the tractors' HTTP APIs](#1-run-the-mockserver-that-mocks-the-tractors-http-apis)
+    - [2. Run the JaCaMo application](#2-run-the-jacamo-application)
 
 ## Project structure
 ```
@@ -50,7 +52,7 @@ to retrieve knowledge about the world — and to use that knowledge to manage a 
   - TIPS: 
     - Use the new terms that you defined in your TBox
     - Currently, the ABox implements the description of the motivating scenario that is required for solving the first 3 competency questions
-- Setup your [GraphDB](https://sandbox-graphdb.interactions.ics.unisg.ch/) repository for testing your ABox and TBox:
+- Setup your [GraphDB](http://localhost:7200/) repository for testing your ABox and TBox:
   - Import your TBox file in your repository: `Import` > `RDF` > `Upload RDF files`
   - Insert your ABox statements in your repository by creating and executing SPARQL INSERT queries
     - TIP: The [queries/insert](SAMOD/agriculture-domain/queries/insert) directory contains example INSERT queries
@@ -58,12 +60,12 @@ to retrieve knowledge about the world — and to use that knowledge to manage a 
     - TIP: The [queries/select](SAMOD/agriculture-domain/queries/select) directory contains example SELECT queries that formalize the first 3 competency questions 
 
 ### Task 2.3
-- Modify the template to use your GraphDB credentials and repository name in the Java class [`FarmKG`](src/env/farm/FarmKG.java), and the agent programs [`moisture_detector.asl`](src/agt/moisture_detector.asl), [`irrigator.asl`](src/agt/irrigator.asl)
+- Modify the template to use repository name in the Java class [`FarmKG`](src/env/farm/FarmKG.java), and the agent programs [`moisture_detector.asl`](src/agt/moisture_detector.asl#L4), [`irrigator.asl`](src/agt/irrigator.asl#L4)
 - Complete the methods of the Java class [`FarmKG`](src/env/farm/FarmKG.java) that enable autonomous agents to query your GraphDB repository through a JaCaMo application:
-  - `queryFarmSections()`
-  - `querySectionCoordinates()`
-  - `queryCropOfSection()`
-  - `queryRequiredMoisture()`
+  - [`queryFarmSections()`](src/env/farm/FarmKG.java#L127)
+  - [`querySectionCoordinates()`](src/env/farm/FarmKG.java#L136)
+  - [`queryCropOfSection()`](src/env/farm/FarmKG.java#L145)
+  - [queryRequiredMoisture()](src/env/farm/FarmKG.java#L154)
 - TIPS:
   - Use your SPARQL SELECT queries from Task 2.2 that formalize the competency questions q4, q5, q6, and q7.
   - The class [`FarmKG`](src/env/farm/FarmKG.java) contains the full implementation of the example methods `queryFarm()` and `queryThing()`
@@ -71,12 +73,11 @@ to retrieve knowledge about the world — and to use that knowledge to manage a 
 ## How to run the project
 ### 1. Run the mockserver that mocks the tractors' HTTP APIs
 
-Run [MockServer](https://www.mock-server.com/) with [Docker](https://www.docker.com/):
+Run [MockServer](https://www.mock-server.com/) with [Docker Compose](https://docs.docker.com/compose/):
    ```
-   docker run -v "$(pwd)"/mockserver/tractors.json:/tmp/mockserver/tractors.json -e MOCKSERVER_INITIALIZATION_JSON_PATH=/tmp/mockserver/tractors.json -d --rm --name      mockserver -p 1080:1080 mockserver/mockserver
+   docker compose up
    ```
- The above command will run a Docker container in the background and will print the container ID. To stop a container run: `docker stop <CONTAINER_ID>`.
-You can use this [Postman collection](https://api.postman.com/collections/2431802-7df760e4-7bd6-430a-a15f-f189b66ad619?access_key=PMAT-01HQX3Z7GEEPF4ST5VHNARF9D8) to inspect the behavior of the tractors' mockserver.
+The above command will run two Docker containers, one for the mockserver and for the GraphDB. The latter will be available on http://localhost:7200 shortly afterwards. You can import the [Postman collection](smart-farm.postman_collection.json) by drag and drop the file into your workspace on [postman](https://www.postman.com/) to inspect the behavior of the tractors' mockserver.
 
 
 ### 2. Run the JaCaMo application

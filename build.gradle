@@ -21,8 +21,10 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.jacamo:jacamo:1.1'
-    implementation 'com.github.HyperAgents:jacamo-hypermedia:main-SNAPSHOT'
+    //TODO Make jacamo official versions when compatible with JDK 21
+    implementation 'com.github.GiugAles:jacamo:SS2025'
+    //TODO Make jacamo-hypermedia official versions when compatible with JDK 21
+    implementation 'com.github.GiugAles:jacamo-hypermedia:SS2025-1'
     implementation 'com.google.code.gson:gson:2.9.1'
     implementation 'org.apache.httpcomponents.client5:httpclient5:5.0'
     implementation 'org.apache.httpcomponents.client5:httpclient5-fluent:5.0'

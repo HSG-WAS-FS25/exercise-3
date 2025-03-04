@@ -164,13 +164,16 @@ public class FarmKG extends Artifact {
         
         try {
             URI uri = new URI(queryUrl);
-            String authString = USERNAME + ":" + PASSWORD;
-            byte[] authBytes = authString.getBytes(StandardCharsets.UTF_8);
-            String encodedAuth = Base64.getEncoder().encodeToString(authBytes);
+
+
+            //TODO: Re-enable authentication when GraphDB repositor
+            // String authString = USERNAME + ":" + PASSWORD;
+            // byte[] authBytes = authString.getBytes(StandardCharsets.UTF_8);
+            // String encodedAuth = Base64.getEncoder().encodeToString(authBytes);
 
             HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
-                .header("Authorization", "Basic " + encodedAuth)
+                // .header("Authorization", "Basic " + encodedAuth)
                 .header("Accept", "application/sparql-results+json")
                 .GET()
                 .build();
